@@ -72,6 +72,7 @@ pipeline {
             }
         }
     }
+
     post{
         success {
             githubStatusCheck("SUCCESS", "Build succeeded");
