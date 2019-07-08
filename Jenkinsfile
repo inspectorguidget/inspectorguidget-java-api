@@ -1,6 +1,6 @@
 def githubStatusCheck(String state, String description){
     def commitHash = checkout(scm).GIT_COMMIT
-    githubNotify account: 'inspectorguidget',sha: "${commitHash}", status: state, description: description, credentialsId: 'github-token', repo: 'inspectorguidget-data'
+    githubNotify account: 'inspectorguidget',sha: "${commitHash}", status: state, description: description, credentialsId: 'github-token', repo: 'inspectorguidget-java-api'
 }
 
 pipeline {
@@ -33,7 +33,7 @@ pipeline {
         stage ('Git') {
             steps {
                 //going to build on the branch master
-                git branch: 'master', url: "https://github.com/inspectorguidget/inspectorguidget-data"
+                git branch: 'master', url: "https://github.com/inspectorguidget/inspectorguidget-java-api"
             }
         }
 
